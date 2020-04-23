@@ -1,0 +1,65 @@
+.container {
+  min-height: 100vh;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111111;
+  box-shadow: 0px 4px 8px #0d0d0d;
+  padding: 1rem 1.6rem;
+  color: #ffffff;
+  margin-bottom: 50px;
+}
+.logo,
+.github {
+  width: 25%;
+}
+.logo:hover {
+  text-decoration: underline;
+}
+.logo h3 {
+  font-family: 'Helvetica Neue';
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin: 0;
+}
+.search {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.search input {
+  width: 80%;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+.search a {
+  background-color: #b73326;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1.4rem;
+}
+.search button:hover {
+  cursor: pointer;
+}
+.github {
+  text-align: right;
+}
+@media only screen and (max-width: 992px) {
+  .navbar {
+    flex-direction: column;
+  }
+  .logo,
+  .search,
+  .github {
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
+  }
+}
