@@ -1,6 +1,6 @@
 # 90Pixel Frontend Code Challenge Repo
 
-[Movie Search App](https://90pixel-frontend-code-challange.now.sh/)
+## [Movie Search App](https://90pixel-frontend-code-challange.now.sh/)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
 
