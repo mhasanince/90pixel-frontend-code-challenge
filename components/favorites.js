@@ -10,20 +10,21 @@ export default function Favorites() {
     });
   }, []);
   const favorites = movies.map((favorite, idx) => {
+    const { title, poster, year, type } = favorite;
     return (
       <div className={Styles.movie} key={idx}>
-        <img src={favorite.poster} alt={favorite.title} />
+        <img src={poster} alt={title} />
         <Link
           href="/movie/[title]"
-          as={`/movie/${favorite.title}-${favorite.year}-${favorite.type}`}
+          as={`/movie/${title}-${year.replace('–', '')}-${type}`}
         >
           <a>
-            <h4 className={Styles.title}>{favorite.title}</h4>
+            <h4 className={Styles.title}>{title}</h4>
           </a>
         </Link>
         <div className={Styles.subInfo}>
-          <p>{favorite.year}</p>
-          <p>{favorite.type}</p>
+          <p>{year}</p>
+          <p>{type}</p>
         </div>
       </div>
     );

@@ -130,3 +130,23 @@
 .addToFavorites img {
   margin-left: 10px;
 }
+
+@media only screen and (max-width: 992px) {
+  .movie {
+    flex-direction: column;
+  }
+  .poster {
+    width: 50%;
+    border: 0;
+    margin: 0 auto;
+  }
+  .details {
+    width: 100%;
+  }
+  /* .subDetails p {
+    padding: 3px;
+  } */
+  .imdbRating h3 {
+    font-size: 1.3rem;
+  }
+}

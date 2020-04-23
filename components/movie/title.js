@@ -9,7 +9,6 @@ export default function Title({ movieData }) {
           <p>{movieData.Year}</p>
           <p>{movieData.Runtime}</p>
           <p>{movieData.Genre}</p>
-          <p>{movieData.Type}</p>
         </div>
       </div>
       <div className={Styles.imdbRating}>

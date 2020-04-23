@@ -16,11 +16,13 @@
 .movies {
   margin: 1rem;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .movie {
   width: 20%;
   text-align: center;
+  padding: 10px;
 }
 
 .movie img {
@@ -44,4 +46,10 @@
 
 .subInfo p:first-child {
   border-right: 1px solid #888888;
+}
+
+@media only screen and (max-width: 992px) {
+  .movie {
+    width: 33.333%;
+  }
 }
