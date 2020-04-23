@@ -1,0 +1,49 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.search h1 {
+  border-bottom: 2px solid #ffffff;
+  margin-top: 0;
+}
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie {
+  width: 20%;
+  padding: 10px;
+  text-align: center;
+}
+
+.movie img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 1.2rem;
+}
+
+.subInfo {
+  display: flex;
+  justify-content: center;
+}
+
+.subInfo p {
+  font-weight: 300;
+  padding: 5px;
+}
+
+.subInfo p:first-child {
+  border-right: 1px solid #888888;
+}
+
+@media only screen and (max-width: 992px) {
+  .movie {
+    width: 33.333%;
+  }
+}
