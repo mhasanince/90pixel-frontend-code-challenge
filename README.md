@@ -1,4 +1,4 @@
-90Pixel Frontend Code Challenge Repo
+# 90Pixel Frontend Code Challenge Repo
 
 [Movie Search App](https://90pixel-frontend-code-challange.now.sh/)
 
