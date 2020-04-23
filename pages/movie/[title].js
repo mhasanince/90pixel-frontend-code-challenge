@@ -10,11 +10,27 @@ export default function Movie({ movieData }) {
   const saveLocal = () => {
     let favorites = JSON.parse(localStorage.getItem('favorites'));
     if (favorites === null) {
-      favorites = [movieData.Title];
+      favorites = [
+        {
+          title: movieData.Title,
+          year: movieData.Year,
+          type: movieData.Type,
+          poster: movieData.Poster,
+        },
+      ];
       window.localStorage.setItem('favorites', JSON.stringify(favorites));
     } else {
       if (favorites.indexOf(movieData.Title) < 0) {
-        favorites = [...favorites, movieData.Title];
+        favorites = [
+          ...favorites,
+          {
+            title: movieData.Title,
+            year: movieData.Year,
+            genre: movieData.Genre,
+            type: movieData.Type,
+            poster: movieData.Poster,
+          },
+        ];
         window.localStorage.setItem('favorites', JSON.stringify(favorites));
       }
     }

@@ -7,8 +7,41 @@
 
 .header {
   width: 60%;
-  margin: 0 auto;
+  margin: 2rem auto;
   font-size: 2rem;
   border-bottom: 2px solid white;
   margin-top: 0;
+}
+
+.movies {
+  margin: 1rem;
+  display: flex;
+}
+
+.movie {
+  width: 20%;
+  text-align: center;
+}
+
+.movie img {
+  width: 100%;
+  height: auto;
+}
+
+.title {
+  margin: 5px;
+}
+
+.subInfo {
+  display: flex;
+  justify-content: center;
+}
+
+.subInfo p {
+  margin: 0;
+  padding: 0 10px;
+}
+
+.subInfo p:first-child {
+  border-right: 1px solid #888888;
 }

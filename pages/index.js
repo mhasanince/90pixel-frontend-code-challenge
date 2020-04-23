@@ -1,4 +1,3 @@
-import { getMovieData } from '../lib/favorites';
 import Layout from '../components/layout';
 import Form from '../components/form';
 import Favorites from '../components/favorites';
