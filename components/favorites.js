@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { removeFromFavorites } from '../helpers/helpers';
 import Styles from '../styles/favorites.module.css';
 
 export default function Favorites() {
@@ -13,10 +14,16 @@ export default function Favorites() {
     const { title, poster, year, type } = favorite;
     return (
       <div className={Styles.movie} key={idx}>
-        <img src={poster} alt={title} />
+        <div className={Styles.poster}>
+          <img src={poster} alt={title} />
+          <button
+            className={Styles.remove}
+            onClick={() => setMovies(removeFromFavorites(favorite))}
+          ></button>
+        </div>
         <Link
           href="/movie/[title]"
-          as={`/movie/${title}-${year.replace('–', '')}-${type}`}
+          as={`/movie/${title}_${year.replace('–', '')}_${type}`}
         >
           <a>
             <h4 className={Styles.title}>{title}</h4>

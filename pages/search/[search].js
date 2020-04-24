@@ -10,7 +10,7 @@ export default function Search({ movies }) {
         <img src={movie.Poster} alt={movie.Title} />
         <Link
           href="/movie/[title]"
-          as={`/movie/${movie.Title}-${movie.Year.replace('–', '')}-${
+          as={`/movie/${movie.Title}_${movie.Year.replace('–', '')}_${
             movie.Type
           }`}
         >

@@ -1,4 +1,5 @@
 import { getMovieData } from '../../lib/movie';
+import { saveLocal } from '../../helpers/helpers';
 import Layout from '../../components/layout';
 import Styles from '../../styles/movie.module.css';
 import Title from '../../components/movie/title';
@@ -7,34 +8,6 @@ import Ratings from '../../components/movie/ratings';
 
 export default function Movie({ movieData }) {
   let content;
-  const saveLocal = () => {
-    let favorites = JSON.parse(localStorage.getItem('favorites'));
-    if (favorites === null) {
-      favorites = [
-        {
-          title: movieData.Title,
-          year: movieData.Year,
-          type: movieData.Type,
-          poster: movieData.Poster,
-        },
-      ];
-      window.localStorage.setItem('favorites', JSON.stringify(favorites));
-    } else {
-      if (favorites.indexOf(movieData.Title) < 0) {
-        favorites = [
-          ...favorites,
-          {
-            title: movieData.Title,
-            year: movieData.Year,
-            genre: movieData.Genre,
-            type: movieData.Type,
-            poster: movieData.Poster,
-          },
-        ];
-        window.localStorage.setItem('favorites', JSON.stringify(favorites));
-      }
-    }
-  };
   if (movieData.Response === 'True') {
     content = (
       <div className={Styles.movie}>
@@ -45,7 +18,10 @@ export default function Movie({ movieData }) {
           <Title movieData={movieData} />
           <Content movieData={movieData} />
           <Ratings movieData={movieData} />
-          <button className={Styles.addToFavorites} onClick={saveLocal}>
+          <button
+            className={Styles.addToFavorites}
+            onClick={() => saveLocal(movieData)}
+          >
             <p>Add to Favorites</p>
             <img src="/star-fill.svg" alt="star" />
           </button>
@@ -63,7 +39,7 @@ export default function Movie({ movieData }) {
 }
 
 export async function getServerSideProps({ params }) {
-  const query = params.title.split('-');
+  const query = params.title.split('_');
   const title = query[0];
   const year = query[1];
   const type = query[2];

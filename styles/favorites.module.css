@@ -25,13 +25,45 @@
   padding: 10px;
 }
 
+.poster {
+  position: relative;
+  min-height: 400px;
+}
+
 .movie img {
   width: 100%;
   height: auto;
 }
 
+.remove::before {
+  content: 'Remove from favorites';
+}
+
+.remove {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 10px;
+  text-align: center;
+  padding: 5px;
+  border: 0;
+  border-radius: 5px;
+  background-color: #b73326;
+  color: #ffffff;
+  opacity: 0;
+  z-index: 2;
+}
+
+.movie:hover .remove {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
 .title {
   margin: 5px;
+  font-size: 1.2rem;
 }
 
 .subInfo {
@@ -51,5 +83,18 @@
 @media only screen and (max-width: 992px) {
   .movie {
     width: 33.333%;
+  }
+  .poster {
+    min-height: 150px;
+  }
+  .remove::before {
+    content: 'X';
+  }
+  .remove {
+    top: 5px;
+    left: 5px;
+    margin: 0;
+    padding: 10px;
+    opacity: 0.8;
   }
 }

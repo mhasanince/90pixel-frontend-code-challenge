@@ -25,7 +25,12 @@ export default function Layout({ children }) {
             </a>
           </Link>
           <div className={Styles.search}>
-            <input type="text" value={search} onChange={handleChange} />
+            <input
+              type="text"
+              placeholder="Basic search bar. Enter any film title"
+              value={search}
+              onChange={handleChange}
+            />
             <Link href="/search/[search]" as={`/search/${search}`}>
               <a>Search</a>
             </Link>
