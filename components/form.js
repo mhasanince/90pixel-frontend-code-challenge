@@ -40,7 +40,7 @@ export default function From() {
         </select>
       </div>
       <Link href="/movie/[title]" as={link}>
-        <a className={`${Styles.searchButton}`}>Search</a>
+        <a className={`${Styles.searchButton} button`}>Search</a>
       </Link>
     </div>
   );

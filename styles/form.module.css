@@ -37,13 +37,7 @@
 }
 
 .searchButton {
-  background-color: #b73326;
   margin-top: 10px;
-  padding: 15px;
-  border-radius: 5px;
-  text-align: center;
-  font-weight: 500;
-  font-size: 1.4rem;
 }
 
 @media only screen and (max-width: 992px) {

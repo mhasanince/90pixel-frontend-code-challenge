@@ -112,11 +112,6 @@
   align-items: center;
   width: 50%;
   margin: 20px auto;
-  padding: 15px;
-  background-color: #b73326;
-  border: 0;
-  border-radius: 5px;
-  color: white;
   text-transform: uppercase;
 }
 .addToFavorites:hover {

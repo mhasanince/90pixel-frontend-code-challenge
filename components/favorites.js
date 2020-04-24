@@ -17,7 +17,7 @@ export default function Favorites() {
         <div className={Styles.poster}>
           <img src={poster} alt={title} />
           <button
-            className={Styles.remove}
+            className={`${Styles.remove} button`}
             onClick={() => setMovies(removeFromFavorites(favorite))}
           ></button>
         </div>

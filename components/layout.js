@@ -32,7 +32,7 @@ export default function Layout({ children }) {
               onChange={handleChange}
             />
             <Link href="/search/[search]" as={`/search/${search}`}>
-              <a>Search</a>
+              <a className="button">Search</a>
             </Link>
           </div>
           <a

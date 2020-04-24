@@ -19,7 +19,7 @@ export default function Movie({ movieData }) {
           <Content movieData={movieData} />
           <Ratings movieData={movieData} />
           <button
-            className={Styles.addToFavorites}
+            className={`${Styles.addToFavorites} button`}
             onClick={() => saveLocal(movieData)}
           >
             <p>Add to Favorites</p>

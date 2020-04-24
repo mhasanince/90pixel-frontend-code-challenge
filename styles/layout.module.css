@@ -39,11 +39,7 @@
   font-size: 1.2rem;
 }
 .search a {
-  background-color: #b73326;
   padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-  font-size: 1.4rem;
 }
 .search button:hover {
   cursor: pointer;
