@@ -21,13 +21,14 @@ export default function Layout({ children }) {
           </Head>
           <Link href="/">
             <a className={Styles.logo}>
+              <img src="/logo.svg" alt="logo" />
               <h3>Movie Search App</h3>
             </a>
           </Link>
           <div className={Styles.search}>
             <input
               type="text"
-              placeholder="Basic search bar. Enter any film title"
+              placeholder="Basic search bar. Enter any movie/series/episode title"
               value={search}
               onChange={handleChange}
             />

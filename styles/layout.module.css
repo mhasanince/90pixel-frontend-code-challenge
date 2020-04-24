@@ -15,8 +15,17 @@
 .github {
   width: 25%;
 }
+.logo {
+  display: flex;
+  align-items: center;
+}
 .logo:hover {
   text-decoration: underline;
+}
+.logo img {
+  width: 100%;
+  max-width: 64px;
+  height: auto;
 }
 .logo h3 {
   font-family: 'Helvetica Neue';
@@ -50,12 +59,12 @@
 @media only screen and (max-width: 992px) {
   .navbar {
     flex-direction: column;
+    align-items: center;
   }
   .logo,
   .search,
   .github {
     width: 100%;
-    text-align: center;
-    margin: 5px 0;
+    margin: 5px auto;
   }
 }
