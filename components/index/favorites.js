@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { removeFromFavorites } from '../helpers/helpers';
-import Styles from '../styles/favorites.module.css';
+import Styles from '../../styles/favorites.module.css';
+import { ToastProvider } from 'react-toast-notifications';
+import RemoveFavoriteButton from './removeFavoriteButton';
 
 export default function Favorites() {
   const [movies, setMovies] = useState([]);
@@ -10,16 +11,18 @@ export default function Favorites() {
       return localStorage.favorites ? JSON.parse(localStorage.favorites) : [];
     });
   }, []);
+  const handleRemove = (favorites) => {
+    setMovies(favorites);
+  };
   const favorites = movies.map((favorite, idx) => {
     const { title, poster, year, type } = favorite;
     return (
       <div className={Styles.movie} key={idx}>
         <div className={Styles.poster}>
           <img src={poster} alt={title} />
-          <button
-            className={`${Styles.remove} button`}
-            onClick={() => setMovies(removeFromFavorites(favorite))}
-          ></button>
+          <ToastProvider>
+            <RemoveFavoriteButton remove={handleRemove} favorite={favorite} />
+          </ToastProvider>
         </div>
         <Link
           href="/movie/[title]"

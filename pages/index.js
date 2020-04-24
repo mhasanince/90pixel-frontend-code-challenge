@@ -1,6 +1,6 @@
 import Layout from '../components/layout';
-import Form from '../components/form';
-import Favorites from '../components/favorites';
+import Form from '../components/index/form';
+import Favorites from '../components/index/favorites';
 import Styles from '../styles/index.module.css';
 
 export default function Home() {

@@ -1,3 +1,4 @@
+import { ToastProvider } from 'react-toast-notifications';
 import { getMovieData } from '../../lib/movie';
 import { saveLocal } from '../../helpers/helpers';
 import Layout from '../../components/layout';
@@ -5,9 +6,13 @@ import Styles from '../../styles/movie.module.css';
 import Title from '../../components/movie/title';
 import Content from '../../components/movie/content';
 import Ratings from '../../components/movie/ratings';
+import FavoriteButton from '../../components/movie/favoriteButton';
 
 export default function Movie({ movieData }) {
   let content;
+  const handleFavoriteButton = () => {
+    saveLocal(movieData);
+  };
   if (movieData.Response === 'True') {
     content = (
       <div className={Styles.movie}>
@@ -18,13 +23,12 @@ export default function Movie({ movieData }) {
           <Title movieData={movieData} />
           <Content movieData={movieData} />
           <Ratings movieData={movieData} />
-          <button
-            className={`${Styles.addToFavorites} button`}
-            onClick={() => saveLocal(movieData)}
-          >
-            <p>Add to Favorites</p>
-            <img src="/star-fill.svg" alt="star" />
-          </button>
+          <ToastProvider>
+            <FavoriteButton
+              handleFavoriteButton={handleFavoriteButton}
+              movieTitle={movieData.Title}
+            />
+          </ToastProvider>
         </div>
       </div>
     );

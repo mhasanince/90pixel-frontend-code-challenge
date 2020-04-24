@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { fillYears } from '../helpers/helpers';
-import Styles from '../styles/form.module.css';
+import { fillYears } from '../../helpers/helpers';
+import Styles from '../../styles/form.module.css';
 
 export default function From() {
   const [title, setTitle] = useState('');

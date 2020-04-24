@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import Styles from '../styles/layout.module.css';
 import Link from 'next/link';
+import Styles from '../styles/layout.module.css';
 
 export default function Layout({ children }) {
   const [search, setSearch] = useState('');
